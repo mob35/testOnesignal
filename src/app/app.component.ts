@@ -27,22 +27,29 @@ export class MyApp {
       }
     });
   }
+  // onSignalSetup() {
+  //   this.oneSignal.startInit('4deb2817-a4ea-496c-867e-9eb26940f565', '503984043648');
+
+  //   // this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
+
+  //   this.oneSignal.handleNotificationReceived().subscribe((onReceived) => {
+  //     // do something when notification is received
+  //   });
+
+  //   this.oneSignal.handleNotificationOpened().subscribe(() => {
+  //     // do something when a notification is opened
+  //   });
+
+  //   this.oneSignal.endInit();
+  // }
   onSignalSetup() {
-    this.oneSignal.startInit('4deb2817-a4ea-496c-867e-9eb26940f565', '503984043648');
+    this.oneSignal.startInit('c65af13f-937e-4d90-b4cc-bbf8d3f94b6b', '271054249481');
 
     // this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
 
     this.oneSignal.handleNotificationReceived().subscribe((onReceived) => {
       // do something when notification is received
-      let notifications = window.localStorage.getItem('buyerNotification') ? JSON.parse(window.localStorage.getItem('buyerNotification')) : [];
-
-      notifications.unshift({
-        date: new Date(),
-        message: onReceived.payload.body
-      });
-
-      window.localStorage.setItem('buyerNotification', JSON.stringify(notifications));
-    });
+     });
 
     this.oneSignal.handleNotificationOpened().subscribe(() => {
       // do something when a notification is opened
